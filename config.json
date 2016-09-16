@@ -1,0 +1,10 @@
+{
+  "timeZone": {
+    "type": "object",
+    "properties": {
+      "output24HourTime": {
+        "type": "boolean"
+      }
+    }
+  }
+}
