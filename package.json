@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "elliptical": "^1.2.0",
-    "elliptical-datetime": "^1.0.1",
     "lacona-api": "^1.4.0",
     "lacona-phrases": "^1.0.1",
     "lodash": "^4.15.0",

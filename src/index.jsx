@@ -2,8 +2,7 @@
 import _ from 'lodash'
 import { createElement } from 'elliptical'
 import { setClipboard } from 'lacona-api'
-import { Command } from 'lacona-phrases'
-import { Time } from 'elliptical-datetime'
+import { Command, Time } from 'lacona-phrases'
 import tz from 'timezone-names'
 import moment from 'moment'
 
