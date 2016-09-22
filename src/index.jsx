@@ -40,6 +40,8 @@ function timezoneMath (result, twentyFourHour) {
   let fromMoment = moment.utc(result.time)
   if (result.fromTZ) {
     fromMoment.subtract(result.fromTZ.offset, 'minutes')
+  } else {
+    fromMoment.add(new Date().getTimezoneOffset(), 'minutes')
   }
 
   const toMoment = fromMoment.clone()
@@ -50,7 +52,7 @@ function timezoneMath (result, twentyFourHour) {
   return `${toFormat} ${result.toTZ.abbreviation}`
 }
 
-export const SwitchAudioDeviceCommand = {
+export const ConvertTimezoneCommand = {
   extends: [Command],
 
   execute (result, {config}) {
@@ -82,4 +84,4 @@ export const SwitchAudioDeviceCommand = {
   }
 }
 
-export const extensions = [SwitchAudioDeviceCommand]
+export const extensions = [ConvertTimezoneCommand]
