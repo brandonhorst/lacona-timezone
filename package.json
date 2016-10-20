@@ -4,9 +4,15 @@
   "description": "Lacona Addon for doing time zone math",
   "main": "lib/index.js",
   "lacona": {
-    "title": "Timezone",
+    "title": "Time Zones",
     "description": "Convert between time zones",
-    "config": "config.json"
+    "config": "config.json",
+    "icon": "img/Minus 1 Hour-96.png",
+    "examples": [
+      "check [5pm](time) in [China Standard Time](time zone)",
+      "check current time in [GMT](time zone)",
+      "check [1:30am](time) [PDT](time zone) in [EDT](time zone)"
+    ]
   },
   "scripts": {
     "build": "babel src --out-dir lib",
