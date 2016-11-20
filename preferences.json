@@ -1,4 +1,5 @@
 {
-"output24HourTime": {
-  "type": "boolean"
+  "output24HourTime": {
+    "type": "boolean"
+  }
 }
