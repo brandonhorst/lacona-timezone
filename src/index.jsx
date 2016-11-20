@@ -56,12 +56,12 @@ export const ConvertTimezoneCommand = {
   extends: [Command],
 
   execute (result, {config}) {
-    const text = timezoneMath(result, config.timeZone.output24HourTime)
+    const text = timezoneMath(result, config.output24HourTime)
     setClipboard({text})
   },
 
   preview (result, {config}) {
-    const value = timezoneMath(result, config.timeZone.output24HourTime)
+    const value = timezoneMath(result, config.output24HourTime)
     return {type: 'text', value}
   },
 
