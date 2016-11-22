@@ -37,14 +37,20 @@ const TimeZone = {
 }
 
 function timezoneMath (result, twentyFourHour) {
-  let fromMoment = moment.utc(result.time)
-  if (result.fromTZ) {
-    fromMoment.subtract(result.fromTZ.offset, 'minutes')
-  } else {
-    fromMoment.add(new Date().getTimezoneOffset(), 'minutes')
-  }
+  const startMoment = result.time
+    ? (result.fromTZ
+        ? moment.utc(result.time).subtract(result.fromTZ.offset, 'minutes')
+        : moment(result.time).utc()
+      )
+    : moment().utc()
 
-  const toMoment = fromMoment.clone()
+  // if (result.fromTZ) {
+  //   startMoment.subtract(result.fromTZ.offset, 'minutes')
+  // } else {
+  //   startMoment.add(new Date().getTimezoneOffset(), 'minutes')
+  // }
+
+  const toMoment = startMoment.clone()
   toMoment.add(result.toTZ.offset, 'minutes')
 
   const format = twentyFourHour ? 'HH:mm' : 'h:mm a'
@@ -71,7 +77,7 @@ export const ConvertTimezoneCommand = {
         <list items={['check ', 'compute ', 'calculate ', 'convert ']} />
         <choice id='time'>
           <Time />
-          <literal text='current time' value={{}} />
+          <literal text='current time' />
         </choice>
         <sequence optional limited id='fromTZ'>
           <list items={[' ']} />
